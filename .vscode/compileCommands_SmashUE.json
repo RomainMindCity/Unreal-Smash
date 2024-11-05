@@ -1,0 +1,106 @@
+[
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Private\\Arena\\AArenaPlayerRespawn.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Private\\Arena\\ArenaPlayerStart.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Private\\Inputs\\InputTriggerDoubleTap.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Private\\Inputs\\InputTriggerPressedFast.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Public\\Arena\\ArenaPlayerRespawn.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Public\\Arena\\ArenaPlayerStart.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Public\\Arena\\ArenaPlayerStartOrient.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Public\\Inputs\\InputTriggerDoubleTap.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\Public\\Inputs\\InputTriggerPressedFast.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\SmashUE.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\SmashUE.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\SmashUE.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\Source\\SmashUE\\SmashUnits.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\moust\\Downloads\\SmashUE_ClearedVersion_1.0.0\\SmashUE_ClearedVersion-master\\.vscode\\compileCommands_SmashUE\\SmashUE.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	}
+]
