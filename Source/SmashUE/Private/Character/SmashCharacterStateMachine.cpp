@@ -54,7 +54,7 @@ USmashCharacterState* USmashCharacterStateMachine::GetState(ESmashCharacterState
 void USmashCharacterStateMachine::ChangeState(ESmashCharacterStateID NextStateID)
 {
 	USmashCharacterState* NextState = GetState(NextStateID);
-	if (NextState != nullptr) return;
+	if (NextState == nullptr) return;
 
 	if (CurrentState != nullptr)
 	{

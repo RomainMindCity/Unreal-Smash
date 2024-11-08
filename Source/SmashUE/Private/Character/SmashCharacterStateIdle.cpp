@@ -45,7 +45,7 @@ void USmashCharacterStateIdle::StateTick(float DeltaTime)
 		-1,
 		3.f,
 		FColor::Green,
-		TEXT("Tick StateWalk")
+		TEXT("Tick State Idle")
 	);
 }
 

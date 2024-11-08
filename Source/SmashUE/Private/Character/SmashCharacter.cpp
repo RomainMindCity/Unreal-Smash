@@ -4,6 +4,7 @@
 #include "Character/SmashCharacter.h"
 
 #include "Character/SmashCharacterStateMachine.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 // Sets default values

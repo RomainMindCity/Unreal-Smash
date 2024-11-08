@@ -1,17 +1,16 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Character/SmashCharacterStateWalk.h"
-
+#include "Character/SmashCharacterStateRun.h"
 #include "Character/SmashCharacter.h"
 #include "Character/SmashCharacterStateID.h"
 
-ESmashCharacterStateID USmashCharacterStateWalk::GetStateID()
+ESmashCharacterStateID USmashCharacterStateRun::GetStateID()
 {
-	return ESmashCharacterStateID::Walk;
+	return ESmashCharacterStateID::Run;
 }
 
-void USmashCharacterStateWalk::StateEnter(ESmashCharacterStateID PreviousStateID)
+void USmashCharacterStateRun::StateEnter(ESmashCharacterStateID PreviousStateID)
 {
 	Super::StateEnter(PreviousStateID);
 
@@ -24,7 +23,7 @@ void USmashCharacterStateWalk::StateEnter(ESmashCharacterStateID PreviousStateID
 	);
 }
 
-void USmashCharacterStateWalk::StateExit(ESmashCharacterStateID NextStateID)
+void USmashCharacterStateRun::StateExit(ESmashCharacterStateID NextStateID)
 {
 	Super::StateExit(NextStateID);
 
@@ -37,7 +36,7 @@ void USmashCharacterStateWalk::StateExit(ESmashCharacterStateID NextStateID)
 	);
 }
 
-void USmashCharacterStateWalk::StateTick(float DeltaTime)
+void USmashCharacterStateRun::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 
