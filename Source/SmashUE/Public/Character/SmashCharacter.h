@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "SmashCharacterSettings.h"
+#include "SmashCharacterStateID.h"
 #include "GameFramework/Character.h"
 #include "SmashCharacter.generated.h"
 
@@ -29,7 +30,6 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 #pragma endregion
 
 #pragma region Orient
@@ -56,6 +56,8 @@ public:
 
 	void TickStateMachine(float DeltaTime) const;
 
+	void ChangeState(ESmashCharacterStateID NewStateID);
+
 protected:
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<USmashCharacterStateMachine> StateMachine;
@@ -73,6 +75,31 @@ public:
 
 	protected:
 	void SetupMappingContextIntoController() const;
+
+#pragma endregion
+
+#pragma region Input Move X
+
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInputMoveXEvent, float, InputMoveX);
+	
+public:
+	float GetInputMoveX() const;
+	
+	UPROPERTY()
+	FInputMoveXEvent InputMoveXFastEvent;
+
+	float GetInputMoveXThreshold() const;
+
+protected:
+	UPROPERTY()
+	float InputMoveX = 0.f;
+
+private:
+	void BindInputMoveXAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent);
+
+	void OnInputMoveX(const FInputActionValue& InputActionValue);
+
+	void OnInputMoveXFast(const FInputActionValue& InputActionValue);
 
 #pragma endregion
 

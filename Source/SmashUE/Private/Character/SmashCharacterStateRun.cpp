@@ -5,6 +5,7 @@
 #include "Character/SmashCharacter.h"
 #include "Character/SmashCharacterStateID.h"
 
+
 ESmashCharacterStateID USmashCharacterStateRun::GetStateID()
 {
 	return ESmashCharacterStateID::Run;
@@ -13,42 +14,24 @@ ESmashCharacterStateID USmashCharacterStateRun::GetStateID()
 void USmashCharacterStateRun::StateEnter(ESmashCharacterStateID PreviousStateID)
 {
 	Super::StateEnter(PreviousStateID);
-
-	GEngine->AddOnScreenDebugMessage
-	(
-		-1,
-		3.f,
-		FColor::Cyan,
-		TEXT("Enter State : Walk")
-	);
 }
 
 void USmashCharacterStateRun::StateExit(ESmashCharacterStateID NextStateID)
 {
 	Super::StateExit(NextStateID);
-
-	GEngine->AddOnScreenDebugMessage
-	(
-		-1,
-		3.f,
-		FColor::Cyan,
-		TEXT("Exit State : Walk")
-	);
 }
 
 void USmashCharacterStateRun::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 
-	if (Character->GetVelocity().X < MaxMoveSpeed)
-		Character->AddMovementInput(FVector(MaxMoveSpeed, 0, 0));
-	
-
-	GEngine->AddOnScreenDebugMessage
-	(
-		-1,
-		3.f,
-		FColor::Green,
-		TEXT("Tick State Walk")
-	);
+	if (FMath::Abs(Character->GetInputMoveX()) < Character->GetInputMoveXThreshold())
+	{
+		Character->ChangeState(ESmashCharacterStateID::Idle);
+	}
+	else
+	{
+		Character->SetOrientX(Character->GetInputMoveX());
+		Character->AddMovementInput(FVector::ForwardVector, Character->GetOrientX());
+	}
 }

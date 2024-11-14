@@ -18,8 +18,12 @@ class SMASHUE_API USmashCharacterSettings : public UDeveloperSettings
 
 public:
 	UPROPERTY(Config, EditAnywhere, Category="Inputs")
-	TSoftClassPtr<USmashCharacterInputData> InputData;
+	TSoftObjectPtr<USmashCharacterInputData> InputData;
 
 	UPROPERTY(Config, EditAnywhere, Category="Inputs")
-	TSoftClassPtr<UInputMappingContext> InputMappingContext;
+	TSoftObjectPtr<UInputMappingContext> InputMappingContext;
+
+	UPROPERTY(Config, EditAnywhere, Category="Inputs")
+	float InputMoveXThreshold;
+	
 };
