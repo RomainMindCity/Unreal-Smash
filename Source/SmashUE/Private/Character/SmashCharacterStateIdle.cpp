@@ -32,11 +32,20 @@ void USmashCharacterStateIdle::StateTick(float DeltaTime)
 	{
 		Character->ChangeState(ESmashCharacterStateID::Walk);
 	}
+	if (FMath::Abs(Character->GetInputMoveY()) > Character->GetInputMoveYThreshold())
+	{
+		Character->ChangeState(ESmashCharacterStateID::Jump);
+	}
 }
 
 void USmashCharacterStateIdle::OnInputMoveXFast(float InputMoveX)
 {
     Character->ChangeState(ESmashCharacterStateID::Run);
+}
+
+void USmashCharacterStateIdle::OnInputMoveYJump(float InputMoveY)
+{
+	Character->ChangeState(ESmashCharacterStateID::Jump);
 }
 
 

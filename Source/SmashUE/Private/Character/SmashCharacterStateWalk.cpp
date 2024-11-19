@@ -38,9 +38,19 @@ void USmashCharacterStateWalk::StateTick(float DeltaTime)
 		Character->SetOrientX(Character->GetInputMoveX());
 		Character->AddMovementInput(FVector::ForwardVector, Character->GetOrientX());
 	}
+
+	if (FMath::Abs(Character->GetInputMoveY()) > Character->GetInputMoveYThreshold())
+	{
+		Character->ChangeState(ESmashCharacterStateID::Jump);
+	}
 }
 
 void USmashCharacterStateWalk::OnInputMoveXFast(float InputMoveX)
 {
     Character->ChangeState(ESmashCharacterStateID::Run);
+}
+
+void USmashCharacterStateWalk::OnInputMoveYJump(float InputMoveY)
+{
+	Character->ChangeState(ESmashCharacterStateID::Jump);
 }
