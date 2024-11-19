@@ -5,13 +5,14 @@
 #include "CoreMinimal.h"
 #include "SmashCharacterSettings.h"
 #include "SmashCharacterStateID.h"
+#include "Camera/CameraFollowTarget.h"
 #include "GameFramework/Character.h"
 #include "SmashCharacter.generated.h"
 
 class USmashCharacterStateMachine;
 
 UCLASS()
-class SMASHUE_API ASmashCharacter : public ACharacter
+class SMASHUE_API ASmashCharacter : public ACharacter, public ICameraFollowTarget
 {
 	GENERATED_BODY()
 #pragma region Unreal Defaulf
@@ -78,29 +79,45 @@ public:
 
 #pragma endregion
 
-#pragma region Input Move X
+#pragma region Input Move X/Y
 
 	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInputMoveXEvent, float, InputMoveX);
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FInputMoveYEvent, float, InputMoveY);
 	
 public:
 	float GetInputMoveX() const;
+	float GetInputMoveY() const;
 	
 	UPROPERTY()
 	FInputMoveXEvent InputMoveXFastEvent;
 
+	UPROPERTY()
+	FInputMoveYEvent InputMoveYEvent;
+
 	float GetInputMoveXThreshold() const;
+	float GetInputMoveYThreshold() const;
 
 protected:
 	UPROPERTY()
 	float InputMoveX = 0.f;
 
+	UPROPERTY()
+	float InputMoveY= 0.f;
+
 private:
 	void BindInputMoveXAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent);
+	void BindInputMoveYAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent);
 
 	void OnInputMoveX(const FInputActionValue& InputActionValue);
 
 	void OnInputMoveXFast(const FInputActionValue& InputActionValue);
 
+	void OnInputMoveYJump(const FInputActionValue& InputActionValue);
+
 #pragma endregion
 
+#pragma region CameraTarget
+	virtual bool IsFollowable() override;
+	virtual FVector GetFollowPosition() override;
+#pragma endregion
 };

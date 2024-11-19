@@ -21,4 +21,7 @@ public:
 	
 	UFUNCTION()
 	void OnInputMoveXFast(float InputMoveX);
+
+	UPROPERTY(EditAnywhere)
+	float MaxMoveSpeed;
 };

@@ -29,9 +29,6 @@ public:
 	
 	virtual void StateTick(float DeltaTime);
 
-	UPROPERTY(EditAnywhere)
-	float MaxMoveSpeed;
-
 protected:
 	UPROPERTY()
 	TObjectPtr<ASmashCharacter> Character;

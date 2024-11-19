@@ -29,15 +29,21 @@ void USmashCharacterStateWalk::StateTick(float DeltaTime)
 {
 	Super::StateTick(DeltaTime);
 	
-	if (FMath::Abs(Character->GetInputMoveX()) < 0.1f)
+	if (FMath::Abs(Character->GetInputMoveX()) < Character->GetInputMoveXThreshold())
 	{
 		Character->ChangeState(ESmashCharacterStateID::Idle);
 	}
 	else
 	{
 		Character->SetOrientX(Character->GetInputMoveX());
-		Character->AddMovementInput(FVector::ForwardVector, Character->GetOrientX());
+		Character->AddMovementInput(FVector::ForwardVector * MaxMoveSpeed, Character->GetOrientX());
 	}
+
+	if (FMath::Abs(Character->GetInputMoveY()) > Character->GetInputMoveYThreshold())
+	{
+		Character->ChangeState(ESmashCharacterStateID::Jump);
+	}
+	
 }
 
 void USmashCharacterStateWalk::OnInputMoveXFast(float InputMoveX)

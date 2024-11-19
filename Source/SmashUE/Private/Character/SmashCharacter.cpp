@@ -9,7 +9,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "InputTriggers.h"
-
+#include "Camera/CameraWorldSubSystem.h"
 
 
 // Sets default values
@@ -24,8 +24,8 @@ void ASmashCharacter::BeginPlay()
 {
 	Super::BeginPlay();
 	CreateStateMachine();
-
 	InitStateMachine();
+	GetWorld()->GetSubsystem<UCameraWorldSubSystem>()->AddFollowTarget(this);
 }
 
 // Called every frame
@@ -47,6 +47,7 @@ void ASmashCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	if (EnhancedInputComponent == nullptr) return;
 
 	BindInputMoveXAxisAndActions(EnhancedInputComponent);
+	BindInputMoveYAxisAndActions(EnhancedInputComponent);
 }
 
 float ASmashCharacter::GetOrientX() const
@@ -108,6 +109,12 @@ float ASmashCharacter::GetInputMoveX() const
     return InputMoveX;
 }
 
+float ASmashCharacter::GetInputMoveY() const
+{
+	return InputMoveY;
+}
+
+
 void ASmashCharacter::BindInputMoveXAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent)
 {
 	if (InputData == nullptr) return;
@@ -141,14 +148,47 @@ void ASmashCharacter::BindInputMoveXAxisAndActions(UEnhancedInputComponent* Enha
 	if (InputData->InputActionMoveXFast)
 	{
 		EnhancedInputComponent->BindAction
-        (
-            InputData->InputActionMoveXFast,
-            ETriggerEvent::Triggered,
-            this,
-            &ASmashCharacter::OnInputMoveXFast
-        );
+		(
+			InputData->InputActionMoveXFast,
+			ETriggerEvent::Triggered,
+			this,
+			&ASmashCharacter::OnInputMoveXFast
+		);
 	}
 }
+
+void ASmashCharacter::BindInputMoveYAxisAndActions(UEnhancedInputComponent* EnhancedInputComponent)
+{
+	if (InputData == nullptr) return;
+	
+	if (InputData->InputActionJump)
+	{
+		EnhancedInputComponent->BindAction
+		(
+			InputData->InputActionJump,
+			ETriggerEvent::Started,
+			this,
+			&ASmashCharacter::OnInputMoveYJump
+		);
+		
+		EnhancedInputComponent->BindAction
+		(
+			InputData->InputActionJump,
+			ETriggerEvent::Triggered,
+			this,
+			&ASmashCharacter::OnInputMoveYJump
+		);
+
+		EnhancedInputComponent->BindAction
+		(
+			InputData->InputActionJump,
+			ETriggerEvent::Canceled,
+			this,
+			&ASmashCharacter::OnInputMoveYJump
+		);
+	}
+}
+
 
 void ASmashCharacter::OnInputMoveX(const FInputActionValue& InputActionValue)
 {
@@ -161,7 +201,29 @@ void ASmashCharacter::OnInputMoveXFast(const FInputActionValue& InputActionValue
 	InputMoveXFastEvent.Broadcast(InputMoveX);
 }
 
+void ASmashCharacter::OnInputMoveYJump(const FInputActionValue& InputActionValue)
+{
+	InputMoveY = InputActionValue.Get<float>();
+	InputMoveYEvent.Broadcast(InputMoveY);
+}
+
 float ASmashCharacter::GetInputMoveXThreshold() const
 {
 	return GetDefault<USmashCharacterSettings>()->InputMoveXThreshold;
 }
+
+float ASmashCharacter::GetInputMoveYThreshold() const
+{
+	return GetDefault<USmashCharacterSettings>()->InputMoveYThreshold;
+}
+
+bool ASmashCharacter::IsFollowable()
+{
+	return true;
+}
+
+FVector ASmashCharacter::GetFollowPosition()
+{
+	return GetActorLocation();
+}
+
