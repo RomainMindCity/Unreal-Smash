@@ -9,7 +9,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
 #include "InputTriggers.h"
-
+#include "Camera/CameraWorldSubSystem.h"
 
 
 // Sets default values
@@ -26,6 +26,8 @@ void ASmashCharacter::BeginPlay()
 	CreateStateMachine();
 
 	InitStateMachine();
+
+	GetWorld()->GetSubsystem<UCameraWorldSubSystem>()->AddFollowTarget(this);
 }
 
 // Called every frame
@@ -212,5 +214,16 @@ float ASmashCharacter::GetInputMoveXThreshold() const
 float ASmashCharacter::GetInputMoveYThreshold() const
 {
 	return GetDefault<USmashCharacterSettings>()->InputMoveYThreshold;
+}
+
+bool ASmashCharacter::IsFollowable()
+{
+	return true;
+}
+
+FVector ASmashCharacter::GetFollowPosition()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 0.1f, FColor::Red, FString::Printf(TEXT("GetFollowPosition: %s"), *GetActorLocation().ToString()));
+	return GetActorLocation();
 }
 

@@ -5,13 +5,15 @@
 #include "CoreMinimal.h"
 #include "SmashCharacterSettings.h"
 #include "SmashCharacterStateID.h"
+#include "Camera/CameraFollowTarget.h"
 #include "GameFramework/Character.h"
 #include "SmashCharacter.generated.h"
 
 class USmashCharacterStateMachine;
 
 UCLASS()
-class SMASHUE_API ASmashCharacter : public ACharacter
+class SMASHUE_API ASmashCharacter : public ACharacter,
+									public ICameraFollowTarget
 {
 	GENERATED_BODY()
 #pragma region Unreal Defaulf
@@ -113,4 +115,10 @@ private:
 
 #pragma endregion
 
+#pragma region Camera Follow Target
+public :
+	virtual FVector GetFollowPosition() override;
+	virtual bool IsFollowable() override;
+
+#pragma endregion
 };
