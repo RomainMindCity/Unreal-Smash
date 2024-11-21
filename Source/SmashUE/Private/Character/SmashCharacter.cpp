@@ -223,7 +223,6 @@ bool ASmashCharacter::IsFollowable()
 
 FVector ASmashCharacter::GetFollowPosition()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 0.1f, FColor::Red, FString::Printf(TEXT("GetFollowPosition: %s"), *GetActorLocation().ToString()));
 	return GetActorLocation();
 }
 

@@ -29,10 +29,46 @@ protected:
 
 	UPROPERTY()
 	TArray<UObject*> FollowTargets;
-
+	void TickUpdateCameraZoom(float DeltaTime);
 	void TickUpdateCameraPosition(float DeltaTime);
 	FVector CalculateAveragePositionBetweenTargets();
 	UCameraComponent* FindCameraByTag(const FName& Tag) const;
 
+
+
+#pragma region Bounds
+
+protected:
+	UPROPERTY()
+	FVector2D CameraBoundsMin;
+
+	UPROPERTY()
+	FVector2D CameraBoundsMax;
+
+	UPROPERTY()
+	float CameraBoundsYProjectionCenter;
+	
+	AActor* FindCameraBoundsActor() const;
+
+	void InitCameraBounds(AActor*CameraBoundsActor);
+	void ClampPositionIntoCameraBounds(FVector& Position);
+	void GetViewportBounds(FVector2D& OutViewportBoundsMin, FVector2D& OutViewportBoundsMax);
+	FVector CalculateWorldPositionFromViewportPosition(const FVector2D& ViewportPosition);
+	float CalculateGreatestDistanceBetweenTargets();
+
+	
+	
+#pragma endregion
+
+#pragma region Zoom
+public:
+	float CameraZoomYMin;
+	float CameraZoomYMax;
+
+	void InitCameraZoom();
+	
+
+	
+#pragma endregion
 
 };
