@@ -21,6 +21,7 @@ class SMASHUE_API AMatchGameMode : public AGameModeBase
 
 public:
 	virtual void BeginPlay() override;
+	void CreateAndInitPlayers() const;
 
 protected:
 	UPROPERTY()

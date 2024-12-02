@@ -38,5 +38,11 @@ void USmashCharacterStateFall::StateTick(float DeltaTime)
 		Character->GetCharacterMovement()->AirControl = FallAirControl;
 		Character->AddMovementInput(FVector::ForwardVector, FallHorizontalSpeed);
 	}
+
+	if (Character->GetInputMoveX() == -1)
+	{
+		Character->GetCharacterMovement()->AirControl = FallAirControl;
+		Character->AddMovementInput(FVector::ForwardVector, -FallHorizontalSpeed);
+	}
 }
 
